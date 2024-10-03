@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script src="https://unpkg.com/p5.js-svg@1.5.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script language="javascript" type="module" src="INTER_v3.js" defer></script>
+  <script src="presets.js" defer></script>
+  <script src="random.js" defer></script>
+  <script src="deance.js" defer></script>
+  <script src="radar.js" type="module" defer></script>
+  <title>inter typeface specimen</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <canvas id="myRadarChart"></canvas>
+  <div id="container1">
+    <div id="header">
+      <p id="header-text">
+        inter typeface specimen
+      </p>
+    </div>
+    <div id="container2">
+      <div id="leftBox">
+
+        <p id="introduction">
+          INTER IS A VARIABLE FONT CREATED WITH P5.JS
+        </p>
+        <div id="controlPanel">
+          <!-- <div id="inputBlock">
+            <label for="width">>canvasWidth:</label>
+            <input type="number" id="width" value="250" step="1">
+          </div>
+          <div id="inputBlock">
+            <label for="height">>canvasHeight:</label>
+            <input type="number" id="height" value="250" step="1">
+          </div> -->
+          <div id="inputBlock">
+            <label for="xInterval">>xInterval:</label>
+            <input type="number" id="xInterval" value="5" step="1">
+          </div>
+          <div id="inputBlock">
+            <label for="yInterval">>yInterval:</label>
+            <input type="number" id="yInterval" value="4" step="1">
+          </div>
+          <div id="inputBlock">
+            <label for="xDotSize">>xDotSize:</label>
+            <input type="number" id="xDotSize" value="10" step="1">
+          </div>
+          <div id="inputBlock">
+            <label for="yDotSize">>yDotSize:</label>
+            <input type="number" id="yDotSize" value="4" step="1">
+          </div>
+          <div id="inputBlock">
+            <label for="xDotUnusedSize">>xDotUnusedSize:</label>
+            <input type="number" id="xDotUnusedSize" value="0" step="1">
+          </div>
+          <div id="inputBlock">
+            <label for="yDotUnusedSize">>yDotUnusedSize:</label>
+            <input type="number" id="yDotUnusedSize" value="0" step="1">
+          </div>
+          <div id="inputBlock">
+            <label for="Spacing">spacing:</label>
+            <input type="number" id="Spacing" value="1" step="1">
+          </div>
+          <div id="inputBlock">
+            <label for="backgroundColor">backgroundColor:</label>
+            <input type="color" id="backgroundColor" value="#000000">
+          </div>
+          <div id="inputBlock">
+            <label for="dotColor">dotColor:</label>
+            <input type="color" id="dotColor" value="#FFFFFF">
+          </div>
+          <div id="inputBlock">
+            <label for="dotUnusedColor">dotUnusedColor:</label>
+            <input type="color" id="dotUnusedColor" value="#FFFFFF">
+          </div>
+          <div id="inputBlock">
+            <label for="align">align:</label>
+            <select id="align">
+              <option value="default">left</option>
+              <option value="center">center</option>
+              <option value="right">right</option>
+            </select>
+          </div>
+          <div id="inputBlock">
+            <label for="presetSelect">presets:</label>
+            <select id="presetSelect">
+              <option value="default">default</option>
+              <option value="preset1">plain/thin (monochrome)</option>
+              <option value="preset2">matrix/light (monochrome)</option>
+              <option value="preset3">pixel/regular (monochrome)</option>
+              <option value="preset4">circuit/medium (monochrome)</option>
+              <option value="preset5">discord/bold (monochrome)</option>
+              <option value="preset6">logo 1</option>
+              <option value="preset7">logo 2</option>
+              <option value="preset8">logo 3</option>
+              <option value="preset9">logo 4</option>
+              <option value="preset10">horizontal (monochrome)</option>
+              <option value="preset11">vertical (monochrome)</option>
+              <option value="preset12">#error!!</option>
+              <option value="preset13">3d relief 1 (monochrome)</option>
+              <option value="preset14">3d relief 2 (monochrome)</option>
+              <option value="preset15">weave pattern 1 (monochrome)</option>
+              <option value="preset16">weave pattern 2 (monochrome)</option>
+              <option value="preset17">music strip (monochrome)</option>
+              <option value="preset18">broken as fuck (monochrome)</option>
+              <option value="preset19">a little bit broken (monochrome)</option>
+              <option value="preset20">leak</option>
+              <option value="preset21">dirt 1</option>
+              <option value="preset22">dirt 2</option>
+              <option value="preset23">ascii 1</option>
+              <option value="preset24">ascii 2</option>
+              <option value="preset25">glass</option>
+            </select>
+          </div>
+          <hr>
+          <label for="inputText">inputText:</label>
+            <textarea id="inputText">
+Alternative
+Modes of
+Publishing/
+Reading
+in the
+Post-Digital
+Age
+AaBbCcDdEeFf
+GgHhIiJjKkLlMm
+NnOoPpQqRrSs
+TtUuVvWwXxYyZz
+1234567890
+!@#$%^&*()_+-=[]
+{}|;:'",.<>?\/</textarea>
+          </div>
+          <div id="buttonContainer">
+            <button id="saveSvg">>saveSvg<</button>
+            <button id="random">>random<</button>
+            <button id="dance">>dance<</button>
+          </div>
+      </div>
+      <div id="rightBox">
+      </div>
+    </div>
+    <div id="bottom">
+      <p id="header-text">
+        <a href='https://wangxian.work'>wang xian, 2024</a>
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
